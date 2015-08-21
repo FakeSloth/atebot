@@ -1,7 +1,9 @@
+var config = require('./config');
+
 module.exports = {
   eval: function(target, user) {
     var name = user.name.toLowerCase();
-    if (name !== 'mom' && name !== 'darkpoo') return;
+    if (config.trustUsers.indexOf(name) < 0) return;
     this.send('||>> ' + target);
     try {
       this.send('||<< ' + eval(target));
