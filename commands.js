@@ -9,8 +9,6 @@ module.exports = {
       this.send('<< ' + eval(target));
     } catch (e) {
       this.send('<< error: ' + e.message);
-      var stack = '||' + ('' + e.stack).replace(/\n/g, '\n||');
-      this.send(stack);
     }
   },
   say: function(target, user) {
